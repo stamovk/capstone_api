@@ -1,13 +1,13 @@
 {
   "name": "codevteacher.com",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "",
   "author": "Jason Jafari",
   "private": true,
   "license": "MIT",
   "scripts": {
     "audit": "better-npm-audit audit -l moderate 1002401",
-    "increase-version": "npm --force --no-git-tag-version version patch && git add package.json",
+    "increase-version": "npm --force --no-git-tag-version version patch && git add package.json package-lock.json",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "lint:check": "eslint -c .eslintrc.js --color .",
     "postmerge": "ls -la",
