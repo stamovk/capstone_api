@@ -20,7 +20,7 @@ jobs:
 
       - name: Prepare environment2
         run: |
-          echo "APP_PORT=$(if ${{ env.APP_VERSION }} == 'prd'; then echo 8401; else echo 8402; fi)" >> $GITHUB_ENV
+          echo "APP_PORT=$(if ${{ env.BRANCH_NAME }} == 'test'; then echo 8401; else echo 8402; fi)" >> $GITHUB_ENV
           echo "APP_DOMAIN=$( echo ${{ env.BRANCH_NAME }}).api.codevteacher.com" >> $GITHUB_ENV
 
       - name: print environment
