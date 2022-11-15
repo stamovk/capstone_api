@@ -7,6 +7,8 @@ services:
     image: jafarijason/testgithubaction_dev:${APP_VERSION}
     networks:
       - traefik-public
+    env_file:
+      - .env
     deploy:
       mode: replicated
       restart_policy:
