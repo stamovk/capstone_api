@@ -3,10 +3,12 @@ version: '3.8'
 
 
 services:
-  testgithubaction:
-    image: jafarijason/testgithubaction_dev:${APP_VERSION}
+  codedevteacherapi:
+    image: jafarijason/codedevteacherapi_${BRANCH_NAME}:${APP_VERSION}
     networks:
       - traefik-public
+    env_file:
+      - .env
     deploy:
       mode: replicated
       restart_policy:
@@ -20,14 +22,14 @@ services:
         - traefik.enable=true
         - traefik.docker.network=traefik-public
         - traefik.constraint-label=traefik-public
-        - traefik.http.routers.testgithubaction-http.rule=Host(`${APP_DOMAIN?Variable not set}`)
-        - traefik.http.routers.testgithubaction-http.entrypoints=http
-        - traefik.http.routers.testgithubaction-http.middlewares=https-redirect
-        - traefik.http.routers.testgithubaction-https.rule=Host(`${APP_DOMAIN?Variable not set}`)
-        - traefik.http.routers.testgithubaction-https.entrypoints=https
-        - traefik.http.routers.testgithubaction-https.tls=true
-        - traefik.http.routers.testgithubaction-https.tls.certresolver=le
-        - traefik.http.services.testgithubaction.loadbalancer.server.port=${APP_PORT}
+        - traefik.http.routers.codedevteacherapi-http.rule=Host(`${APP_DOMAIN?Variable not set}`)
+        - traefik.http.routers.codedevteacherapi-http.entrypoints=http
+        - traefik.http.routers.codedevteacherapi-http.middlewares=https-redirect
+        - traefik.http.routers.codedevteacherapi-https.rule=Host(`${APP_DOMAIN?Variable not set}`)
+        - traefik.http.routers.codedevteacherapi-https.entrypoints=https
+        - traefik.http.routers.codedevteacherapi-https.tls=true
+        - traefik.http.routers.codedevteacherapi-https.tls.certresolver=le
+        - traefik.http.services.codedevteacherapi.loadbalancer.server.port=${APP_PORT}
       update_config:
         parallelism: 1
         order: start-first
