@@ -3,6 +3,8 @@ name: build and deploy
 on:
   push:
     branches:
+      - prd
+      - dev
       - test
 
 jobs:
@@ -18,16 +20,20 @@ jobs:
           echo "REPO_NAME=$(echo ${GITHUB_REPOSITORY#*/})" >> $GITHUB_ENV
           echo "BRANCH_NAME=$(echo $GITHUB_REF | awk -F / '{print $3}')" >> $GITHUB_ENV
 
-      - name: assign port for test
-        if: ${{env.BRANCH_NAME == 'test'}}
+      - name: assign port for prd
+        if: ${{env.BRANCH_NAME == 'prd'}}
         run: |
-          echo "APP_PORT=8403" >> $GITHUB_ENV
-
+          echo "APP_PORT=8401" >> $GITHUB_ENV
 
       - name: assign port for dev
         if: ${{env.BRANCH_NAME == 'dev'}}
         run: |
           echo "APP_PORT=8402" >> $GITHUB_ENV
+
+      - name: assign port for test
+        if: ${{env.BRANCH_NAME == 'test'}}
+        run: |
+          echo "APP_PORT=8403" >> $GITHUB_ENV
 
       - name: Prepare environment2
         run: |
