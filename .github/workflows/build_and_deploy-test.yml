@@ -18,9 +18,14 @@ jobs:
           echo "REPO_NAME=$(echo ${GITHUB_REPOSITORY#*/})" >> $GITHUB_ENV
           echo "BRANCH_NAME=$(echo $GITHUB_REF | awk -F / '{print $3}')" >> $GITHUB_ENV
 
+      - name: assign port for test
+        if: ${{env.BRANCH_NAME == 'test'}}
+        run: |
+          echo "APP_PORT=8403" >> $GITHUB_ENV
+
       - name: Prepare environment2
         run: |
-          echo "APP_PORT=$(if $(echo ${{ env.BRANCH_NAME }}) == test; then echo 8401; else echo 8402; fi)" >> $GITHUB_ENV
+          # echo "APP_PORT=$(if $(echo ${{ env.BRANCH_NAME }}) = test; then echo 8401; else echo 8402; fi)" >> $GITHUB_ENV
           echo "APP_DOMAIN=$( echo ${{ env.BRANCH_NAME }}).api.codevteacher.com" >> $GITHUB_ENV
 
       - name: print environment
