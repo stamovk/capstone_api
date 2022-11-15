@@ -4,7 +4,7 @@ version: '3.8'
 
 services:
   testgithubaction:
-    image: jafarijason/testgithubaction_dev:${APP_VERSION}
+    image: jafarijason/testgithubaction_${BRANCH_NAME}:${APP_VERSION}
     networks:
       - traefik-public
     env_file:
