@@ -23,6 +23,12 @@ jobs:
         run: |
           echo "APP_PORT=8403" >> $GITHUB_ENV
 
+
+      - name: assign port for dev
+        if: ${{env.BRANCH_NAME == 'dev'}}
+        run: |
+          echo "APP_PORT=8402" >> $GITHUB_ENV
+
       - name: Prepare environment2
         run: |
           # echo "APP_PORT=$(if $(echo ${{ env.BRANCH_NAME }}) = test; then echo 8401; else echo 8402; fi)" >> $GITHUB_ENV
