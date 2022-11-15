@@ -1,6 +1,6 @@
 {
   "name": "codevteacher.com",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "author": "Jason Jafari",
   "private": true,
@@ -34,6 +34,7 @@
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "dotenv": "^16.0.3",
     "husky": "^8.0.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
