@@ -1,6 +1,6 @@
 {
   "name": "codevteacher.com",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "author": "Jason Jafari",
   "private": true,
@@ -21,7 +21,7 @@
     "start": "export $(xargs < .env) && rm -rf dist && nest start",
     "start:dev": "export $(xargs < .env) && rm -rf dist && nest start --watch",
     "start:debug": "export $(xargs < .env) && rm -rf dist && rm -rf dist && nest start --debug=127.0.0.1:9230 --watch",
-    "start:prod": "node dist/src/main.js",
+    "start:prod": "node dist/main.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
