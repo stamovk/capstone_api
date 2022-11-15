@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Prepare environment
+      - name: Prepare environment (APP_VERSION, REPO_NAME, BRANCH_NAME)
         run: |
           echo "APP_VERSION=$(node printVersion.js)" >> $GITHUB_ENV
           echo "REPO_NAME=$(echo ${GITHUB_REPOSITORY#*/})" >> $GITHUB_ENV
@@ -35,12 +35,11 @@ jobs:
         run: |
           echo "APP_PORT=8403" >> $GITHUB_ENV
 
-      - name: Prepare environment2
+      - name: Prepare APP_DOMAIN
         run: |
-          # echo "APP_PORT=$(if $(echo ${{ env.BRANCH_NAME }}) = test; then echo 8401; else echo 8402; fi)" >> $GITHUB_ENV
           echo "APP_DOMAIN=$( echo ${{ env.BRANCH_NAME }}).api.codevteacher.com" >> $GITHUB_ENV
 
-      - name: print environment
+      - name: print environments
         run: |
           echo "${{ env.APP_VERSION }}"
           echo "${{ env.REPO_NAME }}"
