@@ -1,6 +1,6 @@
 {
   "name": "codevteacher.com",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "",
   "author": "Jason Jafari",
   "private": true,
@@ -54,6 +54,7 @@
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "jest": "28.1.3",
