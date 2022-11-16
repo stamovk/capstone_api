@@ -1,6 +1,6 @@
 {
   "name": "codevteacher.com",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "",
   "author": "Jason Jafari",
   "private": true,
@@ -11,7 +11,7 @@
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "lint:check": "eslint -c .eslintrc.js --color .",
     "postmerge": "ls -la",
-    "precommit": "npm run verify && npm run increase-version",
+    "precommit": "npm run increase-version",
     "prepush": "npm run verify",
     "prebuild": "rimraf dist",
     "prepare": "husky install",
