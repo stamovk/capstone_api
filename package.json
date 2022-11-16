@@ -1,6 +1,6 @@
 {
   "name": "codevteacher.com",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "",
   "author": "Jason Jafari",
   "private": true,
@@ -16,7 +16,7 @@
     "prebuild": "rimraf dist",
     "prepare": "husky install",
     "verify": "npm run lint:check && npm run test",
-    "build": "rm -rf dist && npm run verify && && nest build",
+    "build": "rm -rf dist && npm run verify && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "export $(xargs < .env) && rm -rf dist && nest start",
     "start:dev": "export $(xargs < .env) && rm -rf dist && nest start --watch",
