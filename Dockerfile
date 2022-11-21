@@ -1,9 +1,12 @@
 FROM node:18.12.1
 
-COPY . .
+WORKDIR /app
+
+COPY . /app/.
 
 
 RUN npm i
+RUN npm run test
 RUN npm run build
 
 
