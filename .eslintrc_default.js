@@ -31,19 +31,11 @@ module.exports = {
     ],
     extends: [
         'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:react-hooks/recommended'
     ],
     plugins: [
-        'react',
         '@babel'
     ],
     rules: {
-        'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx'] }],
-        'react/react-in-jsx-scope': 1,
-        'react/prop-types': [0],
-        'react/no-unescaped-entities': [0],
-        'react-hooks/exhaustive-deps': 'off',
         'no-unused-vars': 'warn',
         'no-debugger': 'warn',
         'array-bracket-spacing': [
@@ -187,11 +179,6 @@ module.exports = {
 
     },
     settings: {
-        react: {
-            createClass: 'createReactClass',
-            pragma: 'React',
-            version: "detect",
-        },
         propWrapperFunctions: ['forbidExtraProps']
     }
 };
