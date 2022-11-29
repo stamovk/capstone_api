@@ -6,7 +6,6 @@ import { ExecutionContext, Injectable, Logger, UnauthorizedException } from '@ne
 import * as jwt from 'jsonwebtoken';
 
 import * as _ from 'lodash';
-import process from 'process';
 import { JWT_SECRET_KEY } from 'src/constantInitiate';
 
 @Injectable()

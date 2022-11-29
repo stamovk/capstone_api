@@ -10,5 +10,5 @@ async function bootstrap() {
 }
 bootstrap();
 // TODO: Delete this
-console.log(JWT_SECRET_KEY);
+// console.log(JWT_SECRET_KEY);
 
