@@ -1,5 +1,10 @@
 version: "3.8"
 
+
+secrets:
+  ABCD:
+    external: true
+
 services:
   codedevteacherapi_test:
     image: jafarijason/codedevteacherapi_${BRANCH_NAME}:${APP_VERSION}
@@ -8,8 +13,7 @@ services:
     env_file:
       - .env
     secrets:
-      - ABCD:
-          external: true
+      - ABCD
     environment:
       - ABCD=/run/secrets/ABCD
     deploy:
