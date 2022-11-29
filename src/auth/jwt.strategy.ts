@@ -7,6 +7,7 @@ import * as jwt from 'jsonwebtoken';
 
 import * as _ from 'lodash';
 import process from 'process';
+import { JWT_SECRET_KEY } from 'src/constantInitiate';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(CustomStrategy) {
@@ -25,7 +26,7 @@ export class JwtStrategy extends PassportStrategy(CustomStrategy) {
             return false;
         }
 
-        const decoded: any = jwt.verify(token, process.env.JWT_SECRET_KEY);
+        const decoded: any = jwt.verify(token, JWT_SECRET_KEY);
         if (_.size(decoded?.ROLES) == 0) {
             const message = 'there is no roles in token';
             this.logger.error(message);
