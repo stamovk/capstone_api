@@ -1,6 +1,5 @@
 version: "3.8"
 
-
 secrets:
   codedevteacherapi_test_env_1:
     external: true
@@ -47,6 +46,9 @@ services:
         order: stop-first
     # healthcheck:
     #   test: ["CMD", "./healthCheck.sh", "${APP_PORT}"]
+
+
+
 
 networks:
   traefik-public:
