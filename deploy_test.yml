@@ -14,7 +14,7 @@ services:
       - /run/secrets/ABCD
 
     environment:
-      - ABCD: /run/secrets/ABCD
+      - ABCD=/run/secrets/ABCD
     deploy:
       mode: replicated
       restart_policy:
