@@ -1,6 +1,8 @@
-version: '3.8'
+version: "3.8"
 
-
+secrets:
+  codedevteacherapi_test_env_1:
+    external: true
 
 services:
   codedevteacherapi_test:
@@ -9,6 +11,10 @@ services:
       - traefik-public
     env_file:
       - .env
+    secrets:
+      - codedevteacherapi_test_env_1
+    environment:
+      - CUSTOM_ENV=/run/secrets/codedevteacherapi_test_env_1
     deploy:
       mode: replicated
       restart_policy:
@@ -40,7 +46,6 @@ services:
         order: stop-first
     # healthcheck:
     #   test: ["CMD", "./healthCheck.sh", "${APP_PORT}"]
-
 
 
 

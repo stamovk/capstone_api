@@ -14,12 +14,13 @@ export class UsersService {
             userId: 1,
             username: 'john',
             password: 'changeme',
-            roles: ['role1', 'role2', 'role3'],
+            ROLES: ['role1', 'role2', 'role3'],
         },
         {
             userId: 2,
             username: 'maria',
             password: 'guess',
+            ROLES: ['role1'],
         },
     ];
 

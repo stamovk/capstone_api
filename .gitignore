@@ -47,3 +47,4 @@ secrets
 !.vscode/launch.json
 !.vscode/extensions.json
 .env
+configs_ENVS

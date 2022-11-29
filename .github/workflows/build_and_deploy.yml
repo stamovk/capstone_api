@@ -80,7 +80,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
           script: |
-            source ~/.zshrc && \
+            source ~/.bashrc && \
             mkdir -p /${{env.REPO_NAME}}_${{ env.BRANCH_NAME}}/${{env.APP_VERSION}} && \
             cd  /${{env.REPO_NAME}}_${{ env.BRANCH_NAME}}/${{env.APP_VERSION}} && \
             touch /${{env.REPO_NAME}}_${{ env.BRANCH_NAME}}/${{env.APP_VERSION}}/.env && \
