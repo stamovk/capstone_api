@@ -8,9 +8,10 @@ services:
     env_file:
       - .env
     secrets:
-      - AAAA
-    # environment:
-    #   - ABCD=/run/secrets/ABCD
+      - ABCD:
+          external: true
+    environment:
+      - ABCD=/run/secrets/ABCD
     deploy:
       mode: replicated
       restart_policy:
