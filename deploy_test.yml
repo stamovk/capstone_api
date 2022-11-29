@@ -9,6 +9,8 @@ services:
       - traefik-public
     env_file:
       - .env
+    environment:
+      - ABCD: ${secrets.ABCD}
     deploy:
       mode: replicated
       restart_policy:
