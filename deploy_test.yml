@@ -13,9 +13,7 @@ services:
     env_file:
       - .env
     secrets:
-      - JWT_SECRET_KEY
-    environment:
-      - JWT_SECRET_KEY=/run/secrets/JWT_SECRET_KEY
+      - codedevteacherapi_test_env
     deploy:
       mode: replicated
       restart_policy:
@@ -45,6 +43,10 @@ services:
       rollback_config:
         parallelism: 0
         order: stop-first
+      command:  bash -c "
+          cat  /run/secrets/codedevteacherapi_test_env  > .env   &&
+          npm run start:prod
+        "
     # healthcheck:
     #   test: ["CMD", "./healthCheck.sh", "${APP_PORT}"]
 
