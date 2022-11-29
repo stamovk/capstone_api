@@ -7,10 +7,14 @@ services:
     image: jafarijason/codedevteacherapi_${BRANCH_NAME}:${APP_VERSION}
     networks:
       - traefik-public
+    secrets:
+      - ABCD
     env_file:
       - .env
+      - /run/secrets/ABCD
+
     environment:
-      - ABCD: ${secrets.ABCD}
+      - ABCD: /run/secrets/ABCD
     deploy:
       mode: replicated
       restart_policy:
