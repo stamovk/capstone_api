@@ -85,8 +85,6 @@ jobs:
             cd  /${{env.REPO_NAME}}_${{ env.BRANCH_NAME}}/${{env.APP_VERSION}} && \
             touch /${{env.REPO_NAME}}_${{ env.BRANCH_NAME}}/${{env.APP_VERSION}}/.env && \
             echo "APP_VERSION=${{ env.APP_VERSION }}" >>  /${{env.REPO_NAME}}_${{ env.BRANCH_NAME}}/${{env.APP_VERSION}}/.env && \
-            echo "JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }}" >>  /${{env.REPO_NAME}}_${{ env.BRANCH_NAME}}/${{env.APP_VERSION}}/.env && \
-            export JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }} && \
             echo "APP_PORT=${{ env.APP_PORT }}" >>  /${{env.REPO_NAME}}_${{ env.BRANCH_NAME}}/${{env.APP_VERSION}}/.env && \
             export APP_PORT=${{ env.APP_PORT }} && \
             echo "APP_DOMAIN=${{ env.APP_DOMAIN }}" >>  /${{env.REPO_NAME}}_${{ env.BRANCH_NAME}}/${{env.APP_VERSION}}/.env && \
