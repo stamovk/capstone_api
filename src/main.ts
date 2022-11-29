@@ -10,3 +10,6 @@ async function bootstrap() {
     await app.listen(parseInt(port));
 }
 bootstrap();
+
+// TODO: Delete this
+console.log(process.env.JWT_SECRET_KEY);

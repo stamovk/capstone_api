@@ -2,7 +2,7 @@ version: "3.8"
 
 
 secrets:
-  ABCD:
+  JWT_SECRET_KEY:
     external: true
 
 services:
@@ -13,9 +13,9 @@ services:
     env_file:
       - .env
     secrets:
-      - ABCD
+      - JWT_SECRET_KEY
     environment:
-      - ABCD=/run/secrets/ABCD
+      - JWT_SECRET_KEY=/run/secrets/JWT_SECRET_KEY
     deploy:
       mode: replicated
       restart_policy:
