@@ -15,6 +15,13 @@ const constantInitiate = () => {
     MONGODB_URL = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@codedevteacher1.bburogu.mongodb.net/?retryWrites=true&w=majority`;
 };
 
+export const  whiteLabeledDomains = [
+    'local.codevteacher.com',
+    'dev.admin.codevteacher.com',
+    'prd.admin.codevteacher.com',
+    'test.admin.codevteacher.com'
+];
+
 
 
 

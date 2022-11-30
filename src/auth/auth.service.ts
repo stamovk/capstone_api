@@ -22,7 +22,6 @@ export class AuthService {
             if (verifyPassword) {
                 const copyUser = _.cloneDeep(user);
                 delete copyUser.password;
-                // copyUser.hashedPassword = await passwordHashed(pass);
                 return copyUser;
             }
         }
