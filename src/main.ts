@@ -8,6 +8,10 @@ async function bootstrap() {
     const port: any = APP_PORT || 8409;
     await app.listen(parseInt(port));
 }
+
+// setTimeout(() => {
+
+// }, 1000);
 bootstrap();
 // TODO: Delete this
 // console.log(JWT_SECRET_KEY);

@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { AuthService } from 'src/auth/auth.service';
+import { MongodbService } from 'src/mongodb/mongodb.service';
 
 
 export type User = any;
@@ -9,27 +10,24 @@ export type User = any;
 @Injectable()
 export class UsersService {
 
-    private readonly users = [
-        {
-            userId: 1,
-            username: 'john',
-            password: 'changeme',
-            ROLES: ['role1', 'role2', 'role3'],
-        },
-        {
-            userId: 2,
-            username: 'maria',
-            password: 'guess',
-            ROLES: ['role1'],
-        },
-    ];
+    constructor(
+        private mongodbService: MongodbService,
+    ) { }
 
-    //
 
     async findOne(username) {
 
-        const result = this.users.find((user) => {
-            return user.username === username;
+        // const result = this.users.find((user) => {
+        //     return user.username === username;
+        // });
+        const result = await this.findUserByUsername(username);
+        return result;
+    }
+
+
+    async findUserByUsername(username) {
+        const result = await this.mongodbService.usersCol.findOne({
+            username
         });
         return result;
     }

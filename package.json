@@ -1,6 +1,6 @@
 {
   "name": "codevteacher.com",
-  "version": "1.0.52",
+  "version": "1.0.53",
   "description": "",
   "author": "Jason Jafari",
   "private": true,
@@ -39,6 +39,7 @@
     "dotenv": "^16.0.3",
     "husky": "^8.0.2",
     "lodash": "^4.17.21",
+    "mongodb": "^4.12.1",
     "passport": "^0.6.0",
     "passport-custom": "^1.1.1",
     "passport-jwt": "^4.0.0",

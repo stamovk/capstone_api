@@ -1,11 +1,12 @@
 import { Global, Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
-import { JWT_SECRET_KEY } from 'src/constantInitiate';
+import constantInitiate, { JWT_SECRET_KEY } from 'src/constantInitiate';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './jwt.strategy';
 import { LocalStrategy } from './local.strategy';
 
+constantInitiate();
 @Global()
 @Module({
     imports: [
@@ -19,3 +20,4 @@ import { LocalStrategy } from './local.strategy';
     exports: [AuthService],
 })
 export class AuthModule { }
+
