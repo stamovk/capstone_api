@@ -1,6 +1,6 @@
 {
   "name": "codevteacher.com",
-  "version": "1.0.53",
+  "version": "1.0.54",
   "description": "",
   "author": "Jason Jafari",
   "private": true,
@@ -36,6 +36,7 @@
     "@nestjs/jwt": "^9.0.0",
     "@nestjs/passport": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "husky": "^8.0.2",
     "lodash": "^4.17.21",
