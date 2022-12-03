@@ -18,6 +18,15 @@ export class UsersController {
 
 
     @UseGuards(JwtAuthGuard)
+    @Post('/validateToken')
+    async validateToken(@Request() req) {
+        return {
+            message: 'OK'
+        };
+    }
+
+
+    @UseGuards(JwtAuthGuard)
     @Get('/test')
     getProfile(@Request() req) {
         return req.user;
