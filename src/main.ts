@@ -16,7 +16,8 @@ async function bootstrap() {
             if (whiteLabeledDomains.indexOf(hostname) !== -1) {
                 callback(null, true);
             } else {
-                callback(new Error('Not allowed by CORS'));
+                callback(null, true);
+                // callback(new Error('Not allowed by CORS'));
             }
         },
     });
