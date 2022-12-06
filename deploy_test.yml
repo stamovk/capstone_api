@@ -1,7 +1,7 @@
 version: "3.8"
 
 secrets:
-  codedevteacherapi_test_env_1:
+  codedevteacherapi_test_env_2:
     external: true
 
 services:
@@ -12,9 +12,9 @@ services:
     env_file:
       - .env
     secrets:
-      - codedevteacherapi_test_env_1
+      - codedevteacherapi_test_env_2
     environment:
-      - CUSTOM_ENV=/run/secrets/codedevteacherapi_test_env_1
+      - CUSTOM_ENV=/run/secrets/codedevteacherapi_test_env_2
     deploy:
       mode: replicated
       restart_policy:
