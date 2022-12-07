@@ -36,6 +36,7 @@ export class JwtStrategy extends PassportStrategy(CustomStrategy) {
             this.logger.error(message);
             throw new UnauthorizedException(message);
         }
+        req.ROLES = decoded?.ROLES;
         return decoded;
     }
 }
