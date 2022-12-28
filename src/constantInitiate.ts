@@ -16,7 +16,7 @@ const constantInitiate = () => {
 };
 
 export const  whiteLabeledDomains = [
-    'local.codevteacher.com',
+    'local.codevteacher.com', 
     'dev.admin.codevteacher.com',
     'prd.admin.codevteacher.com',
     'test.admin.codevteacher.com'

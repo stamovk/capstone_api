@@ -12,7 +12,7 @@ import { JwtAuthGuard } from './auth/jwt-auth.guard';
     imports: [
         AuthModule,
         UsersModule,
-        MongodbModule
+        MongodbModule,
     ],
     controllers: [AppController],
     providers: [
